@@ -4,58 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:background="@color/colorMainMenuBackground"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="280dp"
-        android:layout_height="304dp"
-        app:srcCompat="@drawable/an1"
-        tools:layout_editor_absoluteX="414dp"
-        tools:layout_editor_absoluteY="464dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="280dp"
-        android:layout_height="304dp"
-        app:srcCompat="@drawable/diningroom"
-        tools:layout_editor_absoluteX="414dp"
-        tools:layout_editor_absoluteY="73dp" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="280dp"
-        android:layout_height="304dp"
-        android:background="#00E60606"
-        app:srcCompat="@drawable/kitchen"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="73dp" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="140dp"
-        android:layout_height="167dp"
-        app:srcCompat="@drawable/an7"
-        tools:layout_editor_absoluteX="1090dp"
-        tools:layout_editor_absoluteY="24dp" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="280dp"
-        android:layout_height="304dp"
-        app:srcCompat="@drawable/an4"
-        tools:layout_editor_absoluteX="752dp"
-        tools:layout_editor_absoluteY="73dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="280dp"
-        android:layout_height="304dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/bathroom"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="452dp" />
-
+        android:id="@+id/MM_Kitchen_View"
+        android:layout_width="@dimen/tile_size"
+        android:layout_height="@dimen/tile_size"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="108dp"
+        android:background="@color/colorMainMenuTiles"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stove" />
 </android.support.constraint.ConstraintLayout>
 
