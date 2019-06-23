@@ -11,8 +11,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".NewActivity"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_new"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
