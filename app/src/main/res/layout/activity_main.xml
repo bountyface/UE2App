@@ -8,16 +8,20 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/MM_Kitchen_View"
+        android:id="@+id/MM_Kitchen_ImageView"
         android:layout_width="@dimen/tile_size"
         android:layout_height="@dimen/tile_size"
         android:layout_marginStart="108dp"
         android:layout_marginLeft="108dp"
         android:layout_marginTop="108dp"
         android:background="@color/colorMainMenuTiles"
-        android:padding="10dp"
+        android:contentDescription="@string/tileDescription"
+        android:padding="@dimen/tile_padding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stove" />
+        app:srcCompat="@drawable/stove"
+        android:onClick="onKitchenImageViewClick"
+        />
+
 </android.support.constraint.ConstraintLayout>
 
