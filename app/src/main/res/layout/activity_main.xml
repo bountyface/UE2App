@@ -7,20 +7,124 @@
     android:background="@color/colorMainMenuBackground"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/MM_Kitchen_ImageView"
-        android:layout_width="@dimen/tile_size"
-        android:layout_height="@dimen/tile_size"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="76dp"
-        android:background="@color/colorMainMenuTiles"
-        android:contentDescription="@string/tileDescription"
-        android:onClick="onKitchenImageViewClick"
-        android:padding="@dimen/tile_padding"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="966dp"
+        android:layout_height="585dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stove" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/MM_Kitchen_ImageView"
+            android:layout_width="@dimen/tile_size"
+            android:layout_height="@dimen/tile_size"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="21dp"
+            android:background="@color/colorMainMenuTiles"
+            android:contentDescription="@string/tileDescription"
+            android:onClick="onKitchenImageViewClick"
+            android:padding="@dimen/tile_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/stove" />
+
+        <ImageView
+            android:id="@+id/MM_Dining_ImageView"
+            android:layout_width="@dimen/tile_size"
+            android:layout_height="@dimen/tile_size"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
+            android:layout_marginTop="21dp"
+            android:background="@color/colorMainMenuTiles"
+            android:contentDescription="@string/tileDescription"
+            android:onClick="onKitchenImageViewClick"
+            android:padding="@dimen/tile_padding"
+            app:layout_constraintStart_toEndOf="@+id/MM_Kitchen_ImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dinnertable" />
+
+        <ImageView
+            android:id="@+id/MM_Sleeping_ImageView"
+            android:layout_width="@dimen/tile_size"
+            android:layout_height="@dimen/tile_size"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="@color/colorMainMenuTiles"
+            android:contentDescription="@string/tileDescription"
+            android:onClick="onKitchenImageViewClick"
+            android:padding="@dimen/tile_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/MM_Dining_ImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/a7767556" />
+
+        <ImageView
+            android:id="@+id/MM_Bathroom_ImageView"
+            android:layout_width="@dimen/tile_size"
+            android:layout_height="@dimen/tile_size"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorMainMenuTiles"
+            android:contentDescription="@string/tileDescription"
+            android:onClick="onKitchenImageViewClick"
+            android:padding="@dimen/tile_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MM_Kitchen_ImageView"
+            app:srcCompat="@drawable/bathtub" />
+
+        <ImageView
+            android:id="@+id/MM_Living_ImageView"
+            android:layout_width="@dimen/tile_size"
+            android:layout_height="@dimen/tile_size"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorMainMenuTiles"
+            android:contentDescription="@string/tileDescription"
+            android:onClick="onKitchenImageViewClick"
+            android:padding="@dimen/tile_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/MM_Bathroom_ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/MM_Dining_ImageView"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/couch" />
+
+        <ImageView
+            android:id="@+id/MM_Basement_ImageView"
+            android:layout_width="@dimen/tile_size"
+            android:layout_height="@dimen/tile_size"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="21dp"
+            android:background="@color/colorMainMenuTiles"
+            android:contentDescription="@string/tileDescription"
+            android:onClick="onKitchenImageViewClick"
+            android:padding="@dimen/tile_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/MM_Living_ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/MM_Sleeping_ImageView"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/man_descending_stairs" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
 

@@ -3,7 +3,7 @@ package com.example.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class activty_basement extends AppCompatActivity {
+public class Activity_basement extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,21 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activty_basement"></activity>
-        <activity android:name=".Main8Activity" />
-        <activity android:name=".activity_bedroom" />
-        <activity android:name=".activity_dinnerroom" />
-        <activity android:name=".activity_livingroom" />
+        <activity android:name=".Activity_basement"></activity>
+        <activity android:name=".Activity_bedroom" />
+        <activity android:name=".Activity_dinnerroom" />
+        <activity android:name=".Activity_livingroom" />
         <activity
-            android:name=".Main4Activity"
-            android:label="@string/title_activity_main4"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity_kitchen"
+            android:name=".Activity_kitchen"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity_bathroom"
+            android:name=".Activity_bathroom"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".test" />
