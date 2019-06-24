@@ -11,19 +11,19 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activty_basement"></activity>
         <activity android:name=".Main8Activity" />
-        <activity android:name=".Main7Activity" />
-        <activity android:name=".Main6Activity" />
-        <activity android:name=".Main5Activity" />
+        <activity android:name=".activity_bedroom" />
+        <activity android:name=".activity_dinnerroom" />
+        <activity android:name=".activity_livingroom" />
         <activity
             android:name=".Main4Activity"
             android:label="@string/title_activity_main4"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Main3Activity"
+            android:name=".activity_kitchen"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Main2Activity"
+            android:name=".activity_bathroom"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".test" />

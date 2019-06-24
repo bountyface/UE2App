@@ -3,11 +3,11 @@ package com.example.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Main7Activity extends AppCompatActivity {
+public class activity_livingroom extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bedroom);
+        setContentView(R.layout.activity_livingroom);
     }
 }
