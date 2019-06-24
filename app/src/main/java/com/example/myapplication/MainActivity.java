@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onKitchenImageViewClick(View view) {
         displayToast("Kitchen");
-        Intent testIntent = new Intent(getApplicationContext(), test.class);
+        Intent testIntent = new Intent(getApplicationContext(), Popup.class);
         startActivity(testIntent);
     }
 }

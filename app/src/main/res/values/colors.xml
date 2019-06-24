@@ -3,6 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorMainMenuTiles">#FF9800</color>
+    <color name="colorMainMenuTiles">#DFBD67</color>
     <color name="colorMainMenuBackground">#1E7CE6</color>
+    <color name="colorPopup">#07F000</color>
+    <color name="colorSubMenuBackground">#469B8A</color>
+    <color name="colorTaskPositive">#2ED51B</color>
+    <color name="colorTaskNeutral">#F4FF00</color>
+    <color name="colorTaskNegative">#9C2A2A</color>
 </resources>
