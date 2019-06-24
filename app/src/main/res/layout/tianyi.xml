@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="242dp"
+        android:layout_width="229dp"
         android:layout_height="213dp"
         android:onClick="onKitchenImageViewClick"
         app:srcCompat="@drawable/an"
@@ -25,18 +25,18 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="201dp"
+        android:layout_width="228dp"
         android:layout_height="206dp"
         app:srcCompat="@drawable/an2"
-        tools:layout_editor_absoluteX="467dp"
+        tools:layout_editor_absoluteX="454dp"
         tools:layout_editor_absoluteY="123dp" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="242dp"
+        android:layout_width="229dp"
         android:layout_height="208dp"
         app:srcCompat="@drawable/an4"
-        tools:layout_editor_absoluteX="760dp"
+        tools:layout_editor_absoluteX="774dp"
         tools:layout_editor_absoluteY="128dp" />
 
     <ImageView
