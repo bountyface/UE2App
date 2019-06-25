@@ -1,24 +1,23 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
+import android.view.View;
 
 public class Popup extends Activity {
-
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.popupwindow);
+        setContentView(R.layout.custompopup);
+    }
 
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int width= dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int) (width*0.6), (int)(height*0.6));
+    public void onCheckClick(View view){
+        Intent testIntent = new Intent(getApplicationContext(), Activity_kitchen.class);
+        startActivity(testIntent);
+    }
+    public void onCrossClick(View view){
 
     }
 }

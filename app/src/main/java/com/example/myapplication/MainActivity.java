@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,17 +36,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ShowPopup(View v){
-        TextView txtclose;
+        ImageView imgCheck;
+        ImageView imgClose;
 
         myDialog.setContentView(R.layout.custompopup);
-        txtclose=(TextView) myDialog.findViewById(R.id.txtclose);
+        imgCheck = (ImageView) myDialog.findViewById(R.id.popup_check_ImageView);
+        imgClose = (ImageView) myDialog.findViewById(R.id.popup_cross_ImageView);
 
-        txtclose.setOnClickListener(new View.OnClickListener(){
+        imgCheck.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View view) {
+                myDialog.dismiss();
+                Intent testIntent = new Intent(getApplicationContext(), Activity_kitchen.class);
+                startActivity(testIntent);
+                //myDialog.setContentView(R.layout.activity_kitchen_2);
+            }
+        });
+
+        imgClose.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
                 myDialog.dismiss();
             }
         });
+
         myDialog.show();
 
     }
@@ -58,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onKitchenImageViewClick(View view) {
         displayToast("Kitchen");
-        Intent testIntent = new Intent(getApplicationContext(), Popup.class);
+        Intent testIntent = new Intent(getApplicationContext(), Popup_obsolete.class);
         startActivity(testIntent);
     }
 }
