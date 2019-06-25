@@ -19,5 +19,6 @@ public class Popup extends Activity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int) (width*0.6), (int)(height*0.6));
+
     }
 }

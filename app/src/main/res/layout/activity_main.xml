@@ -30,7 +30,7 @@
             android:layout_marginTop="21dp"
             android:background="@color/colorMainMenuTiles"
             android:contentDescription="@string/tileDescription"
-            android:onClick="onKitchenImageViewClick"
+            android:onClick="ShowPopup"
             android:padding="@dimen/tile_padding"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
