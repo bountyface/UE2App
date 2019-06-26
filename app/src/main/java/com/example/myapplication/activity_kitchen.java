@@ -1,19 +1,18 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
-public class Activity_kitchen extends AppCompatActivity {
+public class Activity_kitchen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kitchen_2);
+        setContentView(R.layout.activity_kitchen);
 
     }
     public void onBackButtonClick(View view){
@@ -21,4 +20,10 @@ public class Activity_kitchen extends AppCompatActivity {
         startActivity(testIntent);
     }
 
+    public void onSubmenuTileClick(){
+        Log.d("mytag","onSubmenuTile Clicked!!!!!!");
+        Intent testIntent = new Intent(this, Activity_smiley.class);
+        startActivity(testIntent);
+
+    }
 }

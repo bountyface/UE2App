@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public void ShowPopup(View v){
         ImageView imgCheck;
         ImageView imgClose;
-
+        Log.d("mytag","Kitchen Clicked!!!!!!");
         myDialog.setContentView(R.layout.custompopup);
         imgCheck = (ImageView) myDialog.findViewById(R.id.popup_check_ImageView);
         imgClose = (ImageView) myDialog.findViewById(R.id.popup_cross_ImageView);
@@ -73,4 +74,6 @@ public class MainActivity extends AppCompatActivity {
         Intent testIntent = new Intent(getApplicationContext(), Popup_obsolete.class);
         startActivity(testIntent);
     }
+
+
 }

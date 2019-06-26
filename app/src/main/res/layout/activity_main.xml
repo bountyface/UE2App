@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/SM_Clean_ImageView"
+            android:id="@+id/SM_Kitchen_ImageView"
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:layout_marginStart="24dp"
@@ -37,7 +37,7 @@
             app:srcCompat="@drawable/stove" />
 
         <ImageView
-            android:id="@+id/SM_vacuum_ImageView"
+            android:id="@+id/SM_Dining_ImageView"
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:layout_marginStart="96dp"
@@ -47,12 +47,12 @@
             android:contentDescription="@string/tileDescription"
             android:onClick="onKitchenImageViewClick"
             android:padding="@dimen/tile_padding"
-            app:layout_constraintStart_toEndOf="@+id/SM_Clean_ImageView"
+            app:layout_constraintStart_toEndOf="@+id/SM_Kitchen_ImageView"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/dinnertable" />
 
         <ImageView
-            android:id="@+id/SM_washing_ImageView"
+            android:id="@+id/SM_Sleeping_ImageView"
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:layout_marginStart="96dp"
@@ -65,12 +65,12 @@
             android:onClick="onKitchenImageViewClick"
             android:padding="@dimen/tile_padding"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/SM_vacuum_ImageView"
+            app:layout_constraintStart_toEndOf="@+id/SM_Dining_ImageView"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/a7767556" />
 
         <ImageView
-            android:id="@+id/SM_washingup_ImageView"
+            android:id="@+id/SM_Bathroom_ImageView"
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:layout_marginStart="24dp"
@@ -83,7 +83,7 @@
             android:padding="@dimen/tile_padding"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SM_Clean_ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/SM_Kitchen_ImageView"
             app:srcCompat="@drawable/bathtub" />
 
         <ImageView
@@ -99,8 +99,8 @@
             android:onClick="onKitchenImageViewClick"
             android:padding="@dimen/tile_padding"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/SM_washingup_ImageView"
-            app:layout_constraintTop_toBottomOf="@+id/SM_vacuum_ImageView"
+            app:layout_constraintStart_toEndOf="@+id/SM_Bathroom_ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/SM_Dining_ImageView"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/couch" />
 
@@ -122,7 +122,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/MM_Living_ImageView"
-            app:layout_constraintTop_toBottomOf="@+id/SM_washing_ImageView"
+            app:layout_constraintTop_toBottomOf="@+id/SM_Sleeping_ImageView"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/man_descending_stairs" />
     </android.support.constraint.ConstraintLayout>
