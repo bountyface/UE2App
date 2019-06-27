@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-public class Activity_kitchen extends Activity {
+public class Activity_kitchen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

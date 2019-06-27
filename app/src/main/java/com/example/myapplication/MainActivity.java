@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onKitchenImageViewClick(View view) {
+        Log.d("mytag","onKitchenImageViewClick Clicked!!!!!!");
         displayToast("Kitchen");
         Intent testIntent = new Intent(getApplicationContext(), Popup_obsolete.class);
         startActivity(testIntent);
