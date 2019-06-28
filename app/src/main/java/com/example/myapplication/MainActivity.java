@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 break;
+
             case R.id.SM_Dining_ImageView:
                 Log.d("mytag","switch2");
                 imgCheck.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +70,20 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 break;
+
+            case R.id.SM_Sleeping_ImageView:
+                Log.d("mytag","switch3");
+                imgCheck.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("mytag","onclick3");
+                        myDialog.dismiss();
+                        Intent testIntent = new Intent(getApplicationContext(), Activity_sleeping.class);
+                        startActivity(testIntent);
+                    }
+                });
+                break;
+
                 default:
                     break;
         }
