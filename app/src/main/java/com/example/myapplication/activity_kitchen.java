@@ -20,7 +20,7 @@ public class Activity_kitchen extends AppCompatActivity {
         startActivity(testIntent);
     }
 
-    public void onSubmenuTileClick(){
+    public void onSubmenuTileClick(View view){
         Log.d("mytag","onSubmenuTile Clicked!!!!!!");
         Intent testIntent = new Intent(this, Activity_smiley.class);
         startActivity(testIntent);

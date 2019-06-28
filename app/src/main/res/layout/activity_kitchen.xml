@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".MainActivity">
+        tools:context=".Activity_kitchen">
 
         <ImageView
             android:id="@+id/SM_Cleaning_ImageView"
@@ -35,7 +35,8 @@
             android:padding="@dimen/tile_padding"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cleaning" />
+            app:srcCompat="@drawable/cleaning"
+            />
 
         <ImageView
             android:id="@+id/SM_Vacuum_ImageView"
