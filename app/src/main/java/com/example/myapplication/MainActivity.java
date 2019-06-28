@@ -84,6 +84,19 @@ public class MainActivity extends AppCompatActivity {
                 });
                 break;
 
+            case R.id.SM_Bathroom_ImageView:
+                Log.d("mytag","switch4");
+                imgCheck.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("mytag","onclick4");
+                        myDialog.dismiss();
+                        Intent testIntent = new Intent(getApplicationContext(), Activity_bathroom.class);
+                        startActivity(testIntent);
+                    }
+                });
+                break;
+
                 default:
                     break;
         }
