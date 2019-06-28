@@ -11,11 +11,17 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class Activity_kitchen extends AppCompatActivity {
-
+public int color;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
+        ImageView cleaning_imgView = (ImageView) findViewById(R.id.SM_Cleaning_ImageView);
+        /*
+        if(savedInstanceState !=null){
+            savedInstanceState.getInt("color_cleaning");
+            cleaning_imgView.setBackgroundResource(savedInstanceState.getInt("color_cleaning"));
+        }*/
 
     }
     public void onBackButtonClick(View view){
@@ -39,7 +45,7 @@ public class Activity_kitchen extends AppCompatActivity {
 
         if(requestCode==1){
             if(resultCode==RESULT_OK){
-                int color = data.getIntExtra("color",0);
+                color = data.getIntExtra("color",0);
                 ImageView imgView = (ImageView) findViewById(data.getIntExtra("id",0));
                 imgView.setBackgroundResource(color);
                 Log.d("mytag","RESULT_OK: "+color);
@@ -52,5 +58,12 @@ public class Activity_kitchen extends AppCompatActivity {
     public void onSupervisorClick(View view){
         Intent intent = new Intent(this, Activity_skype.class);
         startActivityForResult(intent,1);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("color_cleaning", color);
     }
 }
