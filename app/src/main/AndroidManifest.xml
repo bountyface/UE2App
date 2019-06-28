@@ -21,6 +21,7 @@
         <activity android:name=".Activity_sleeping"/>
         <activity android:name=".Activity_bathroom"/>
         <activity android:name=".Activity_livingroom"/>
+        <activity android:name=".Activity_basement"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -110,6 +110,19 @@ public class MainActivity extends AppCompatActivity {
                 });
                 break;
 
+            case R.id.MM_Basement_ImageView:
+                Log.d("mytag","switch6");
+                imgCheck.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("mytag","onclick6");
+                        myDialog.dismiss();
+                        Intent testIntent = new Intent(getApplicationContext(), Activity_basement.class);
+                        startActivity(testIntent);
+                    }
+                });
+                break;
+
                 default:
                     break;
         }
