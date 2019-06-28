@@ -97,6 +97,19 @@ public class MainActivity extends AppCompatActivity {
                 });
                 break;
 
+            case R.id.MM_Living_ImageView:
+                Log.d("mytag","switch5");
+                imgCheck.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("mytag","onclick5");
+                        myDialog.dismiss();
+                        Intent testIntent = new Intent(getApplicationContext(), Activity_livingroom.class);
+                        startActivity(testIntent);
+                    }
+                });
+                break;
+
                 default:
                     break;
         }
