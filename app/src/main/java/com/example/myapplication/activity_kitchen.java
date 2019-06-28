@@ -39,14 +39,18 @@ public class Activity_kitchen extends AppCompatActivity {
 
         if(requestCode==1){
             if(resultCode==RESULT_OK){
-                String color = data.getStringExtra("color");
+                int color = data.getIntExtra("color",0);
                 ImageView imgView = (ImageView) findViewById(data.getIntExtra("id",0));
-                imgView.setBackgroundColor(Color.parseColor("#D81B60"));
+                imgView.setBackgroundResource(color);
                 Log.d("mytag","RESULT_OK: "+color);
             }
             if(resultCode==RESULT_CANCELED){
                 Log.d("mytag","RESULT_CANCELED");
             }
         }
+    }
+    public void onSupervisorClick(View view){
+        Intent intent = new Intent(this, Activity_skype.class);
+        startActivityForResult(intent,1);
     }
 }

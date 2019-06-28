@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 myDialog.dismiss();
                 Intent testIntent = new Intent(getApplicationContext(), Activity_kitchen.class);
                 startActivity(testIntent);
-                //myDialog.setContentView(R.layout.activity_kitchen_2);
             }
         });
 
@@ -65,16 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void displayToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    public void onKitchenImageViewClick(View view) {
-        Log.d("mytag","onKitchenImageViewClick Clicked!!!!!!");
-        displayToast("Kitchen");
-        Intent testIntent = new Intent(getApplicationContext(), Popup_obsolete.class);
-        startActivity(testIntent);
-    }
-
+    public void onSupervisorClick(View view){
+        Intent intent = new Intent(this, Activity_skype.class);
+        startActivityForResult(intent,1);
+}
 
 }

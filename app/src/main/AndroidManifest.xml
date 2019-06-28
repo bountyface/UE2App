@@ -9,19 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test2"></activity>
+        <activity android:name=".Activity_skype"></activity>
+        <activity android:name=".test2" />
         <activity android:name=".Activity_smiley" />
-        <activity android:name=".Activity_basement" />
-        <activity android:name=".Activity_bedroom" />
-        <activity android:name=".Activity_dinnerroom" />
-        <activity android:name=".Activity_livingroom" />
         <activity
             android:name=".Activity_kitchen"
             android:label="@string/title_activity_main3"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activity_bathroom"
-            android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".test" />
         <activity android:name=".MainActivity">
@@ -31,9 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Popup_obsolete"
-            android:theme="@style/AppTheme.CustomTheme" />
     </application>
 
 </manifest>

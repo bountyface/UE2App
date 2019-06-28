@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,27 +23,29 @@ public Intent receivedIntent;
     }
 
     public void onSmileyGreenClick(View view){
-        Log.d("mytag",""+view.getId());
-
-
         Intent intent = new Intent();
-        intent.putExtra("color","#D81B60" );
+        intent.putExtra("color", R.color.colorTaskPositive);
         intent.putExtra("id", receivedIntent.getIntExtra("viewId",0));
         setResult(RESULT_OK, intent);
 
         finish();
-        //ImageView imgView = (ImageView) findViewById(view.getId());
-        //imgView.setBackgroundColor(Color.parseColor("#D81B60"));
-
-
-        //view.getId();
-
 
     }
     public void onSmileyYellowClick(View view){
+        Intent intent = new Intent();
+        intent.putExtra("color",R.color.colorTaskNeutral );
+        intent.putExtra("id", receivedIntent.getIntExtra("viewId",0));
+        setResult(RESULT_OK, intent);
+
+        finish();
 
     }
     public void onSmileyRedClick(View view){
+        Intent intent = new Intent();
+        intent.putExtra("color",R.color.colorTaskNegative );
+        intent.putExtra("id", receivedIntent.getIntExtra("viewId",0));
+        setResult(RESULT_OK, intent);
 
+        finish();
     }
 }
