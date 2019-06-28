@@ -14,7 +14,7 @@ public class Activity_skype extends AppCompatActivity {
     }
     public void onPhoneClick(View view){
         Intent intent = new Intent();
-        setResult(RESULT_OK, intent);
+        setResult(RESULT_FIRST_USER, intent);
 
         finish();
     }
