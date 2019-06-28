@@ -39,11 +39,40 @@ public class MainActivity extends AppCompatActivity {
     public void ShowPopup(View v){
         ImageView imgCheck;
         ImageView imgClose;
-        Log.d("mytag","Kitchen Clicked!!!!!!");
+        Log.d("mytag","Kitchen " +R.id.SM_Kitchen_ImageView +"_"+ v.getId());
         myDialog.setContentView(R.layout.custompopup);
         imgCheck = (ImageView) myDialog.findViewById(R.id.popup_check_ImageView);
         imgClose = (ImageView) myDialog.findViewById(R.id.popup_cross_ImageView);
 
+        switch(v.getId()){
+            case R.id.SM_Kitchen_ImageView:
+                Log.d("mytag","switch1");
+                imgCheck.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("mytag","onclick1");
+                        myDialog.dismiss();
+                        Intent testIntent = new Intent(getApplicationContext(), Activity_kitchen.class);
+                        startActivity(testIntent);
+                    }
+                });
+                break;
+            case R.id.SM_Dining_ImageView:
+                Log.d("mytag","switch2");
+                imgCheck.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("mytag","onclick2");
+                        myDialog.dismiss();
+                        Intent testIntent = new Intent(getApplicationContext(), Activity_dining.class);
+                        startActivity(testIntent);
+                    }
+                });
+                break;
+                default:
+                    break;
+        }
+/*
         imgCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(testIntent);
             }
         });
+        */
 
         imgClose.setOnClickListener(new View.OnClickListener(){
             @Override

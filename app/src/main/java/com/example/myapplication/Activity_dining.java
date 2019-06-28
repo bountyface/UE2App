@@ -1,8 +1,6 @@
 package com.example.myapplication;
 
-
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Activity_kitchen extends AppCompatActivity {
+public class Activity_dining extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kitchen);
+        setContentView(R.layout.activity_dining);
+        Log.d("mytag","dining created");
 
     }
     public void onBackButtonClick(View view){
