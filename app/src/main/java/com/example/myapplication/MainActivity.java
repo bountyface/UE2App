@@ -292,12 +292,10 @@ public class MainActivity extends AppCompatActivity {
                 mm_status.start();
                 playAudio = true;
             }
-
         });
-
     }
 
-    public void animateAssistant() {
+    private void animateAssistant() {
         assistant = (ImageView) findViewById(R.id.assistant_ImageView);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
         assistant.startAnimation(animation);

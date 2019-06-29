@@ -35,8 +35,7 @@
             android:padding="@dimen/tile_padding"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cleaning"
-            />
+            app:srcCompat="@drawable/cleaning" />
 
         <ImageView
             android:id="@+id/SM_Vacuum_ImageView"
@@ -133,7 +132,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/supervisor"
-            android:onClick="onSupervisorClick"/>
+            android:onClick="onSupervisorClick" />
 
         <ImageView
             android:id="@+id/phone_ImageView"
@@ -155,7 +154,8 @@
             android:layout_marginBottom="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/assistant" />
+            app:srcCompat="@drawable/assistant"
+            android:onClick="onAssistantClick" />
     </android.support.constraint.ConstraintLayout>
 
     <ImageView

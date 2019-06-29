@@ -3,39 +3,46 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class Activity_kitchen extends AppCompatActivity {
-public int color;
+
+    ImageView assistant;
+    public int color;
+
+    boolean playAudio = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
-        ImageView cleaning_imgView = (ImageView) findViewById(R.id.SM_Cleaning_ImageView);
-        /*
-        if(savedInstanceState !=null){
-            savedInstanceState.getInt("color_cleaning");
-            cleaning_imgView.setBackgroundResource(savedInstanceState.getInt("color_cleaning"));
-        }*/
+
+        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        sm_task.start();
+        animateAssistant();
 
     }
-    public void onBackButtonClick(View view){
+
+    public void onBackButtonClick(View view) {
         Intent testIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(testIntent);
     }
 
-    public void onSubmenuTileClick(View view){
+    public void onSubmenuTileClick(View view) {
         int x = 21;
-        Log.d("mytag","onSubmenuTile Clicked!!!!!!");
+        Log.d("mytag", "onSubmenuTile Clicked!!!!!!");
 
         Intent intent = new Intent(this, Activity_smiley.class);
-        intent.putExtra("viewId",view.getId());
-        startActivityForResult(intent,1);
+        intent.putExtra("viewId", view.getId());
+        startActivityForResult(intent, 1);
         //startActivity(testIntent);
     }
 
@@ -43,27 +50,59 @@ public int color;
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==1){
-            if(resultCode==RESULT_OK){
-                color = data.getIntExtra("color",0);
-                ImageView imgView = (ImageView) findViewById(data.getIntExtra("id",0));
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                color = data.getIntExtra("color", 0);
+                ImageView imgView = (ImageView) findViewById(data.getIntExtra("id", 0));
                 imgView.setBackgroundResource(color);
-                Log.d("mytag","RESULT_OK: "+color);
+                Log.d("mytag", "RESULT_OK: " + color);
             }
-            if(resultCode==RESULT_CANCELED){
-                Log.d("mytag","RESULT_CANCELED");
+            if (resultCode == RESULT_CANCELED) {
+                Log.d("mytag", "RESULT_CANCELED");
             }
         }
     }
-    public void onSupervisorClick(View view){
+
+    public void onSupervisorClick(View view) {
         Intent intent = new Intent(this, Activity_skype.class);
-        startActivityForResult(intent,1);
+        startActivityForResult(intent, 1);
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState){
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
         outState.putInt("color_cleaning", color);
     }
+
+
+    public void onAssistantClick(View view) {
+        final MediaPlayer mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen);
+        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+
+        if (playAudio) {
+            mm_popup_kitchen.start();
+        }
+
+        playAudio = false;
+
+        mm_popup_kitchen.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                animateAssistant();
+                sm_task.start();
+                playAudio = true;
+            }
+        });
+        animateAssistant();
+    }
+
+    private void animateAssistant() {
+        assistant = (ImageView) findViewById(R.id.assistant_ImageView);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
+        assistant.startAnimation(animation);
+    }
+
+
 }
