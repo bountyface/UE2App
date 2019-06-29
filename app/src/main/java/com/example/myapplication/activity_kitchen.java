@@ -161,6 +161,4 @@ public class Activity_kitchen extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
         assistant.startAnimation(animation);
     }
-
-
 }
