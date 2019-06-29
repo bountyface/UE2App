@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     Dialog myDialog;
     ImageView assistant;
+    ImageView popupAssistant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +45,14 @@ public class MainActivity extends AppCompatActivity {
     public void ShowPopup(View v){
         ImageView imgCheck;
         ImageView imgClose;
+
+
         Log.d("mytag","Kitchen " +R.id.SM_Kitchen_ImageView +"_"+ v.getId());
         myDialog.setContentView(R.layout.custompopup);
         imgCheck = (ImageView) myDialog.findViewById(R.id.popup_check_ImageView);
         imgClose = (ImageView) myDialog.findViewById(R.id.popup_cross_ImageView);
+
+
 
         switch(v.getId()){
             case R.id.SM_Kitchen_ImageView:
@@ -149,6 +154,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        popupAssistant =(ImageView)myDialog.findViewById(R.id.popup_assistant_ImageView);
+        popupAssistant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("mytag","popupAssistant click!");
+
+                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake1);
+                popupAssistant.startAnimation(animation);
+
+            }
+        });
+        
         myDialog.show();
 
     }
@@ -158,6 +175,10 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent,1);
 }
 public void onAssistantClick(View view) {
+    animateAssistant();
+}
+
+private void animateAssistant(){
     assistant = (ImageView)findViewById(R.id.assistant_ImageView);
     Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
     assistant.startAnimation(animation);

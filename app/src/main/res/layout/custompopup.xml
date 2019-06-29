@@ -8,6 +8,7 @@
     android:background="@color/cardview_dark_background"
     android:padding="5dp"
     android:layout_gravity="center"
+    tools:context=".MainActivity"
     >
 
     <android.support.constraint.ConstraintLayout
@@ -34,7 +35,6 @@
 
         <ImageView
             android:id="@+id/popup_check_ImageView"
-            android:onClick="onCheckClick"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginStart="48dp"
@@ -49,7 +49,6 @@
 
         <ImageView
             android:id="@+id/popup_cross_ImageView"
-            android:onClick="onCrossClick"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginStart="8dp"
