@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,11 +16,14 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Dialog myDialog;
+    ImageView assistant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         myDialog = new Dialog(this);
 
@@ -151,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
     public void onSupervisorClick(View view){
         Intent intent = new Intent(this, Activity_skype.class);
         startActivityForResult(intent,1);
+}
+public void onAssistantClick(View view) {
+    assistant = (ImageView)findViewById(R.id.assistant_ImageView);
+    Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
+    assistant.startAnimation(animation);
 }
 
 }
