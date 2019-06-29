@@ -125,13 +125,14 @@ public class Activity_kitchen extends AppCompatActivity {
         startActivityForResult(intent, 1);
     }
 
+    /*
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
         outState.putInt("color_cleaning", color);
     }
-
+*/
 
     public void onAssistantClick(View view) {
         final MediaPlayer mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen);
