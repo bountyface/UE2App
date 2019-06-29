@@ -56,6 +56,62 @@ public class Activity_kitchen extends AppCompatActivity {
                 color = data.getIntExtra("color", 0);
                 ImageView imgView = (ImageView) findViewById(data.getIntExtra("id", 0));
                 imgView.setBackgroundResource(color);
+
+                final MediaPlayer task_whenfinished = MediaPlayer.create(this, R.raw.task_whenfinished);
+
+                String result = data.getStringExtra("result");
+                switch (result) {
+                    case "green":
+                        final MediaPlayer smiley_feedback_green = MediaPlayer.create(this, R.raw.smiley_feedback_green);
+
+                        if (playAudio) smiley_feedback_green.start();
+                        playAudio = false;
+                        smiley_feedback_green.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                animateAssistant();
+                                task_whenfinished.start();
+                                playAudio = true;
+                            }
+                        });
+
+                        animateAssistant();
+                        break;
+                    case "yellow":
+                        final MediaPlayer smiley_feedback_yellow = MediaPlayer.create(this, R.raw.smiley_feedback_yellow);
+                        if (playAudio) smiley_feedback_yellow.start();
+                        playAudio = false;
+                        smiley_feedback_yellow.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                animateAssistant();
+                                task_whenfinished.start();
+                                playAudio = true;
+                            }
+                        });
+                        animateAssistant();
+                        break;
+                    case "red":
+                        final MediaPlayer smiley_feedback_red = MediaPlayer.create(this, R.raw.smiley_feedback_red);
+                        if (playAudio) smiley_feedback_red.start();
+                        playAudio = false;
+                        smiley_feedback_red.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                animateAssistant();
+                                task_whenfinished.start();
+                                playAudio = true;
+                            }
+                        });
+                        animateAssistant();
+                        break;
+                    default:
+                        break;
+                }
+
                 Log.d("mytag", "RESULT_OK: " + color);
             }
             if (resultCode == RESULT_CANCELED) {

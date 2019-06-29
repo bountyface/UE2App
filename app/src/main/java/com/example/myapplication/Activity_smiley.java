@@ -36,6 +36,7 @@ public class Activity_smiley extends AppCompatActivity {
 
     public void onSmileyGreenClick(View view) {
         Intent intent = new Intent();
+        intent.putExtra("result", "green");
         intent.putExtra("color", R.color.colorTaskPositive);
         intent.putExtra("id", receivedIntent.getIntExtra("viewId", 0));
         setResult(RESULT_OK, intent);
@@ -46,6 +47,7 @@ public class Activity_smiley extends AppCompatActivity {
 
     public void onSmileyYellowClick(View view) {
         Intent intent = new Intent();
+        intent.putExtra("result", "yellow");
         intent.putExtra("color", R.color.colorTaskNeutral);
         intent.putExtra("id", receivedIntent.getIntExtra("viewId", 0));
         setResult(RESULT_OK, intent);
@@ -56,6 +58,7 @@ public class Activity_smiley extends AppCompatActivity {
 
     public void onSmileyRedClick(View view) {
         Intent intent = new Intent();
+        intent.putExtra("result", "red");
         intent.putExtra("color", R.color.colorTaskNegative);
         intent.putExtra("id", receivedIntent.getIntExtra("viewId", 0));
         setResult(RESULT_OK, intent);
