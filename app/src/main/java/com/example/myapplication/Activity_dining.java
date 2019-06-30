@@ -26,7 +26,7 @@ public class Activity_dining extends AppCompatActivity {
         setContentView(R.layout.activity_dining);
         Log.d("mytag", "dining created");
 
-        mm_popup_dining = MediaPlayer.create(this, R.raw.sm_state_dining);
+        mm_popup_dining = MediaPlayer.create(this, R.raw.sm_state_dining_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         sm_task.start();

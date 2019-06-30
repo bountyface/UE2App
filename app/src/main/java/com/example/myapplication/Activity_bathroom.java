@@ -27,7 +27,7 @@ public class Activity_bathroom extends AppCompatActivity {
         setContentView(R.layout.activity_bathroom);
         Log.d("mytag", "dining created");
 
-        sm_state_bathroom = MediaPlayer.create(this, R.raw.sm_state_bathroom);
+        sm_state_bathroom = MediaPlayer.create(this, R.raw.sm_state_bathroom_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
 

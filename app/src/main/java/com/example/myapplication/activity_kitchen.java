@@ -29,7 +29,7 @@ public class Activity_kitchen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
 
-        mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen);
+        mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);

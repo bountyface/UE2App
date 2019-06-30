@@ -28,7 +28,7 @@ public class Activity_livingroom extends AppCompatActivity {
         setContentView(R.layout.activity_livingroom);
         Log.d("mytag", "dining created");
 
-        sm_state_living = MediaPlayer.create(this, R.raw.sm_state_living);
+        sm_state_living = MediaPlayer.create(this, R.raw.sm_state_living_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);

@@ -27,7 +27,7 @@ public class Activity_sleeping extends AppCompatActivity {
         setContentView(R.layout.activity_sleeping);
         Log.d("mytag", "dining created");
 
-        sm_state_sleeping = MediaPlayer.create(this, R.raw.sm_state_sleeping);
+        sm_state_sleeping = MediaPlayer.create(this, R.raw.sm_state_sleeping_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);

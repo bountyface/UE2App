@@ -27,7 +27,7 @@ public class Activity_basement extends AppCompatActivity {
         setContentView(R.layout.activity_basement);
         Log.d("mytag", "dining created");
 
-        sm_state_basement = MediaPlayer.create(this, R.raw.sm_state_basement);
+        sm_state_basement = MediaPlayer.create(this, R.raw.sm_state_basement_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
 
