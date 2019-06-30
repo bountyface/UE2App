@@ -4,6 +4,7 @@ package com.example.myapplication;
 import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -60,6 +61,25 @@ public class MainActivity extends AppCompatActivity {
         });
         */
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("mytag", "pause");
+        mm_popup_kitchen.stop();
+        mm_popup_kitchen.release();
+        mm_popup_dining.stop();
+        mm_popup_dining.release();
+        mm_popup_sleeping.stop();
+        mm_popup_sleeping.release();
+        mm_popup_bathroom.stop();
+        mm_popup_bathroom.release();
+        mm_popup_living.stop();
+        mm_popup_living.release();
+        mm_popup_basement.stop();
+        mm_popup_basement.release();
+    }
+
 
     public void ShowPopup(View v) {
         ImageView imgCheck;

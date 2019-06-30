@@ -44,6 +44,11 @@ public class Activity_livingroom extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     public void onBackButtonClick(View view) {
         Intent testIntent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(testIntent);
