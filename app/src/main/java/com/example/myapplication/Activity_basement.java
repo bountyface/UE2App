@@ -16,6 +16,9 @@ public class Activity_basement extends AppCompatActivity {
     ImageView assistant;
     public int color;
 
+    MediaPlayer sm_state_basement;
+    MediaPlayer sm_task;
+
     boolean playAudio = true;
 
     @Override
@@ -24,7 +27,10 @@ public class Activity_basement extends AppCompatActivity {
         setContentView(R.layout.activity_basement);
         Log.d("mytag", "dining created");
 
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        sm_state_basement = MediaPlayer.create(this, R.raw.sm_state_basement);
+        sm_task = MediaPlayer.create(this, R.raw.sm_task);
+
+
         sm_task.start();
         sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -119,14 +125,12 @@ public class Activity_basement extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-        final MediaPlayer sm_state_basement = MediaPlayer.create(this, R.raw.sm_state_basement);
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
-        if (playAudio) {
-            sm_state_basement.start();
-            playAudio = false;
-        }
+        animateAssistant();
+        sm_state_basement.seekTo(0);
+        sm_state_basement.start();
 
+/*
         sm_state_basement.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -146,7 +150,7 @@ public class Activity_basement extends AppCompatActivity {
         });
 
         Log.d("mytag", "playAudio " + playAudio);
-        animateAssistant();
+        */
     }
 
     private void animateAssistant() {

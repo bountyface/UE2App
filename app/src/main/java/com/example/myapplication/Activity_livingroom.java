@@ -16,6 +16,9 @@ public class Activity_livingroom extends AppCompatActivity {
     ImageView assistant;
     public int color;
 
+    MediaPlayer sm_state_living;
+    MediaPlayer sm_task;
+
     boolean playAudio = true;
 
 
@@ -24,6 +27,9 @@ public class Activity_livingroom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_livingroom);
         Log.d("mytag", "dining created");
+
+        sm_state_living = MediaPlayer.create(this, R.raw.sm_state_living);
+        sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
         sm_task.start();
@@ -121,14 +127,12 @@ public class Activity_livingroom extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-        final MediaPlayer sm_state_living = MediaPlayer.create(this, R.raw.sm_state_living);
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
-        if (playAudio) {
-            sm_state_living.start();
-            playAudio = false;
-        }
+        animateAssistant();
+        sm_state_living.seekTo(0);
+        sm_state_living.start();
 
+/*
         sm_state_living.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -149,6 +153,7 @@ public class Activity_livingroom extends AppCompatActivity {
 
         Log.d("mytag", "playAudio " + playAudio);
         animateAssistant();
+        */
     }
 
     private void animateAssistant() {

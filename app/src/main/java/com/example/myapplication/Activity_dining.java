@@ -15,6 +15,8 @@ public class Activity_dining extends AppCompatActivity {
 
     ImageView assistant;
     public int color;
+    MediaPlayer mm_popup_dining;
+    MediaPlayer sm_task;
 
     boolean playAudio = true;
 
@@ -24,7 +26,9 @@ public class Activity_dining extends AppCompatActivity {
         setContentView(R.layout.activity_dining);
         Log.d("mytag", "dining created");
 
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        mm_popup_dining = MediaPlayer.create(this, R.raw.sm_state_dining);
+        sm_task = MediaPlayer.create(this, R.raw.sm_task);
+
         sm_task.start();
         sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -126,13 +130,13 @@ public class Activity_dining extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-        final MediaPlayer mm_popup_dining = MediaPlayer.create(this, R.raw.sm_state_dining);
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
-        if (playAudio) {
-            mm_popup_dining.start();
-            playAudio = false;
-        }
+        animateAssistant();
+
+        mm_popup_dining.seekTo(0);
+        mm_popup_dining.start();
+
+        /*
 
         mm_popup_dining.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -153,7 +157,8 @@ public class Activity_dining extends AppCompatActivity {
         });
 
         Log.d("mytag", "playAudio " + playAudio);
-        animateAssistant();
+        */
+
     }
 
 }

@@ -16,6 +16,9 @@ public class Activity_sleeping extends AppCompatActivity {
     ImageView assistant;
     public int color;
 
+    MediaPlayer sm_state_sleeping;
+    MediaPlayer sm_task;
+
     boolean playAudio = true;
 
     @Override
@@ -23,6 +26,9 @@ public class Activity_sleeping extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleeping);
         Log.d("mytag", "dining created");
+
+        sm_state_sleeping = MediaPlayer.create(this, R.raw.sm_state_sleeping);
+        sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
         sm_task.start();
@@ -120,14 +126,11 @@ public class Activity_sleeping extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-        final MediaPlayer sm_state_sleeping = MediaPlayer.create(this, R.raw.sm_state_sleeping);
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        animateAssistant();
+        sm_state_sleeping.seekTo(0);
+        sm_state_sleeping.start();
 
-        if (playAudio) {
-            sm_state_sleeping.start();
-            playAudio = false;
-        }
-
+/*
         sm_state_sleeping.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
@@ -148,6 +151,7 @@ public class Activity_sleeping extends AppCompatActivity {
 
         Log.d("mytag", "playAudio " + playAudio);
         animateAssistant();
+        */
     }
 
     private void animateAssistant() {

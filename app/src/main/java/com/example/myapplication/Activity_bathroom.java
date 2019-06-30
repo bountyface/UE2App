@@ -16,6 +16,9 @@ public class Activity_bathroom extends AppCompatActivity {
     ImageView assistant;
     public int color;
 
+    MediaPlayer sm_state_bathroom;
+    MediaPlayer sm_task;
+
     boolean playAudio = true;
 
     @Override
@@ -24,7 +27,10 @@ public class Activity_bathroom extends AppCompatActivity {
         setContentView(R.layout.activity_bathroom);
         Log.d("mytag", "dining created");
 
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        sm_state_bathroom = MediaPlayer.create(this, R.raw.sm_state_bathroom);
+        sm_task = MediaPlayer.create(this, R.raw.sm_task);
+
+
         sm_task.start();
         sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -121,13 +127,12 @@ public class Activity_bathroom extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-        final MediaPlayer sm_state_bathroom = MediaPlayer.create(this, R.raw.sm_state_bathroom);
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
-        if (playAudio) {
-            sm_state_bathroom.start();
-            playAudio = false;
-        }
+        animateAssistant();
+        sm_state_bathroom.seekTo(0);
+        sm_state_bathroom.start();
+
+        /*
 
         sm_state_bathroom.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -148,7 +153,7 @@ public class Activity_bathroom extends AppCompatActivity {
         });
 
         Log.d("mytag", "playAudio " + playAudio);
-        animateAssistant();
+        */
     }
 
     private void animateAssistant() {

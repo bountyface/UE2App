@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mm_popup_living;
     MediaPlayer mm_popup_basement;
 
+    MediaPlayer introduction;
+    MediaPlayer mm_status;
+
     Dialog myDialog;
     ImageView assistant;
     ImageView popupAssistant;
@@ -41,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         mm_popup_bathroom = MediaPlayer.create(this, R.raw.mm_popup_bathroom);
         mm_popup_living = MediaPlayer.create(this, R.raw.mm_popup_living);
         mm_popup_basement = MediaPlayer.create(this, R.raw.mm_popup_basement);
+
+        introduction = MediaPlayer.create(this, R.raw.introduction);
+        mm_status = MediaPlayer.create(this, R.raw.mm_status);
         // for testing purpose
         /*
         ImageView kitchenImageView = (ImageView) findViewById(R.id.MM_Kitchen_ImageView);
@@ -367,18 +373,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAssistantClick(View view) {
         animateAssistant();
-        final MediaPlayer introduction = MediaPlayer.create(this, R.raw.introduction);
 
-        final MediaPlayer mm_status = MediaPlayer.create(this, R.raw.mm_status);
-
-
-        if (playAudio) {
-            introduction.seekTo(0);
-            introduction.start();
-            playAudio = false;
-        }
+        introduction.seekTo(0);
+        introduction.start();
 
 
+/*
         introduction.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
             @Override
@@ -399,6 +399,7 @@ public class MainActivity extends AppCompatActivity {
                 playAudio = true;
             }
         });
+        */
     }
 
     private void animateAssistant() {
