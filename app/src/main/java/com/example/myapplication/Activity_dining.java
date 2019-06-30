@@ -68,8 +68,8 @@ public class Activity_dining extends AppCompatActivity {
 
                             @Override
                             public void onCompletion(MediaPlayer mp) {
-                                animateAssistant();
-                                task_whenfinished.start();
+                                //animateAssistant();
+                                //task_whenfinished.start();
                                 playAudio = true;
                             }
                         });
@@ -84,8 +84,8 @@ public class Activity_dining extends AppCompatActivity {
 
                             @Override
                             public void onCompletion(MediaPlayer mp) {
-                                animateAssistant();
-                                task_whenfinished.start();
+                                //animateAssistant();
+                                //task_whenfinished.start();
                                 playAudio = true;
                             }
                         });
