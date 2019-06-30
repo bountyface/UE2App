@@ -373,18 +373,22 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (playAudio) {
+            introduction.seekTo(0);
             introduction.start();
+            playAudio = false;
         }
 
-        playAudio = false;
+
         introduction.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
             @Override
             public void onCompletion(MediaPlayer mp) {
                 animateAssistant();
                 introduction.release();
-                mm_status.start();
-                playAudio = true;
+                if (!playAudio) {
+                    mm_status.seekTo(0);
+                    mm_status.start();
+                }
             }
         });
 
@@ -392,6 +396,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
                 mm_status.release();
+                playAudio = true;
             }
         });
     }
