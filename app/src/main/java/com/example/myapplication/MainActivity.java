@@ -14,6 +14,13 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    MediaPlayer mm_popup_kitchen;
+    MediaPlayer mm_popup_dining;
+    MediaPlayer mm_popup_sleeping;
+    MediaPlayer mm_popup_bathroom;
+    MediaPlayer mm_popup_living;
+    MediaPlayer mm_popup_basement;
+
     Dialog myDialog;
     ImageView assistant;
     ImageView popupAssistant;
@@ -28,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
         myDialog = new Dialog(this);
 
+        mm_popup_kitchen = MediaPlayer.create(this, R.raw.mm_popup_kitchen);
+        mm_popup_dining = MediaPlayer.create(this, R.raw.mm_popup_dining);
+        mm_popup_sleeping = MediaPlayer.create(this, R.raw.mm_popup_sleeping);
+        mm_popup_bathroom = MediaPlayer.create(this, R.raw.mm_popup_bathroom);
+        mm_popup_living = MediaPlayer.create(this, R.raw.mm_popup_living);
+        mm_popup_basement = MediaPlayer.create(this, R.raw.mm_popup_basement);
         // for testing purpose
         /*
         ImageView kitchenImageView = (ImageView) findViewById(R.id.MM_Kitchen_ImageView);
@@ -45,13 +58,6 @@ public class MainActivity extends AppCompatActivity {
     public void ShowPopup(View v) {
         ImageView imgCheck;
         ImageView imgClose;
-
-        final MediaPlayer mm_popup_kitchen = MediaPlayer.create(this, R.raw.mm_popup_kitchen);
-        final MediaPlayer mm_popup_dining = MediaPlayer.create(this, R.raw.mm_popup_dining);
-        final MediaPlayer mm_popup_sleeping = MediaPlayer.create(this, R.raw.mm_popup_sleeping);
-        final MediaPlayer mm_popup_bathroom = MediaPlayer.create(this, R.raw.mm_popup_bathroom);
-        final MediaPlayer mm_popup_living = MediaPlayer.create(this, R.raw.mm_popup_living);
-        final MediaPlayer mm_popup_basement = MediaPlayer.create(this, R.raw.mm_popup_basement);
 
 
         Log.d("mytag", "Kitchen " + R.id.SM_Kitchen_ImageView + "_" + v.getId());
@@ -80,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.SM_Kitchen_ImageView:
                 Log.d("mytag", "switch1");
+
                 mm_popup_kitchen.start();
+
 
                 mm_popup_kitchen.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
@@ -96,8 +104,16 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("mytag", "popupAssistant click!");
 
                         popupAssistant.startAnimation(animation);
+                        mm_popup_kitchen.seekTo(0);
                         mm_popup_kitchen.start();
 
+
+                        mm_popup_kitchen.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mm_popup_kitchen.release();
+                            }
+                        });
                     }
                 });
 
@@ -131,7 +147,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("mytag", "popupAssistant click!");
 
                         popupAssistant.startAnimation(animation);
+                        mm_popup_dining.seekTo(0);
                         mm_popup_dining.start();
+                        mm_popup_dining.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mm_popup_dining.release();
+                            }
+                        });
 
                     }
                 });
@@ -165,7 +188,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("mytag", "popupAssistant click!");
 
                         popupAssistant.startAnimation(animation);
+                        mm_popup_sleeping.seekTo(0);
                         mm_popup_sleeping.start();
+                        mm_popup_sleeping.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mm_popup_sleeping.release();
+                            }
+                        });
 
                     }
                 });
@@ -199,7 +229,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("mytag", "popupAssistant click!");
 
                         popupAssistant.startAnimation(animation);
+                        mm_popup_bathroom.seekTo(0);
                         mm_popup_bathroom.start();
+                        mm_popup_bathroom.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mm_popup_bathroom.release();
+                            }
+                        });
 
                     }
                 });
@@ -233,7 +270,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("mytag", "popupAssistant click!");
 
                         popupAssistant.startAnimation(animation);
+                        mm_popup_living.seekTo(0);
                         mm_popup_living.start();
+                        mm_popup_living.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mm_popup_living.release();
+                            }
+                        });
 
                     }
                 });
@@ -267,7 +311,14 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("mytag", "popupAssistant click!");
 
                         popupAssistant.startAnimation(animation);
+                        mm_popup_basement.seekTo(0);
                         mm_popup_basement.start();
+                        mm_popup_basement.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mm_popup_basement.release();
+                            }
+                        });
 
                     }
                 });
