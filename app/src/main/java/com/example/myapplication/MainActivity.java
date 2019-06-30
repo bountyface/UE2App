@@ -82,6 +82,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mytag", "switch1");
                 mm_popup_kitchen.start();
 
+                mm_popup_kitchen.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mm_popup_kitchen.release();
+                    }
+                });
+
                 // set onclick of the assistant with the corresponding soundfile
                 popupAssistant.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -110,6 +117,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mytag", "switch2");
                 mm_popup_dining.start();
 
+                mm_popup_dining.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mm_popup_dining.release();
+                    }
+                });
+
                 // set onclick of the assistant with the corresponding soundfile
                 popupAssistant.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -136,6 +150,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.SM_Sleeping_ImageView:
                 Log.d("mytag", "switch3");
                 mm_popup_sleeping.start();
+
+                mm_popup_sleeping.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mm_popup_sleeping.release();
+                    }
+                });
 
                 // set onclick of the assistant with the corresponding soundfile
                 popupAssistant.setOnClickListener(new View.OnClickListener() {
@@ -164,6 +185,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mytag", "switch4");
                 mm_popup_bathroom.start();
 
+                mm_popup_bathroom.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mm_popup_bathroom.release();
+                    }
+                });
+
                 // set onclick of the assistant with the corresponding soundfile
                 popupAssistant.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -191,6 +219,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mytag", "switch5");
                 mm_popup_living.start();
 
+                mm_popup_living.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mm_popup_living.release();
+                    }
+                });
+
                 // set onclick of the assistant with the corresponding soundfile
                 popupAssistant.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -217,6 +252,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.MM_Basement_ImageView:
                 Log.d("mytag", "switch6");
                 mm_popup_basement.start();
+
+                mm_popup_basement.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mm_popup_basement.release();
+                    }
+                });
 
                 // set onclick of the assistant with the corresponding soundfile
                 popupAssistant.setOnClickListener(new View.OnClickListener() {
@@ -289,8 +331,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 animateAssistant();
+                introduction.release();
                 mm_status.start();
                 playAudio = true;
+            }
+        });
+
+        mm_status.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mm_status.release();
             }
         });
     }
