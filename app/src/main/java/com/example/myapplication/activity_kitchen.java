@@ -16,6 +16,9 @@ import android.widget.ImageView;
 
 public class Activity_kitchen extends AppCompatActivity {
 
+    MediaPlayer mm_popup_kitchen;
+    MediaPlayer sm_task;
+
     ImageView assistant;
     public int color;
 
@@ -25,6 +28,9 @@ public class Activity_kitchen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
+
+        mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen);
+        sm_task = MediaPlayer.create(this, R.raw.sm_task);
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
         sm_task.start();
@@ -131,36 +137,33 @@ public class Activity_kitchen extends AppCompatActivity {
 */
 
     public void onAssistantClick(View view) {
-        final MediaPlayer mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen);
-        final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        animateAssistant();
+        //if (!playAudio) return;
 
-        if (playAudio) {
-            mm_popup_kitchen.start();
-            playAudio = false;
-        }
+
+        mm_popup_kitchen.seekTo(0);
+        mm_popup_kitchen.start();
+        //playAudio = false;
+/*
 
         mm_popup_kitchen.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 animateAssistant();
-                mm_popup_kitchen.stop();
                 mm_popup_kitchen.release();
+                //playAudio = true;
+                sm_task.seekTo(0);
                 sm_task.start();
-
             }
         });
 
         sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                playAudio = true;
                 sm_task.release();
             }
         });
-
-
-        Log.d("mytag", "playAudio " + playAudio);
-        animateAssistant();
+        */
     }
 
     private void animateAssistant() {
