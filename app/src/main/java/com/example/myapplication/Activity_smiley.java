@@ -31,6 +31,13 @@ public class Activity_smiley extends AppCompatActivity {
 
         final MediaPlayer smiley_info = MediaPlayer.create(this, R.raw.smiley_info);
         smiley_info.start();
+        smiley_info.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                smiley_info.release();
+            }
+        });
+
         animateAssistant();
     }
 
