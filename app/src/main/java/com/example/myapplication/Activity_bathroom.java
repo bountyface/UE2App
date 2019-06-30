@@ -26,6 +26,13 @@ public class Activity_bathroom extends AppCompatActivity {
 
         final MediaPlayer sm_task = MediaPlayer.create(this, R.raw.sm_task);
         sm_task.start();
+        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                sm_task.release();
+            }
+        });
+
         animateAssistant();
 
     }
@@ -55,22 +62,16 @@ public class Activity_bathroom extends AppCompatActivity {
                 ImageView imgView = (ImageView) findViewById(data.getIntExtra("id", 0));
                 imgView.setBackgroundResource(color);
 
-                final MediaPlayer task_whenfinished = MediaPlayer.create(this, R.raw.task_whenfinished);
 
                 String result = data.getStringExtra("result");
                 switch (result) {
                     case "green":
                         final MediaPlayer smiley_feedback_green = MediaPlayer.create(this, R.raw.smiley_feedback_green);
-
-                        if (playAudio) smiley_feedback_green.start();
-                        playAudio = false;
+                        smiley_feedback_green.start();
                         smiley_feedback_green.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
                             @Override
-                            public void onCompletion(MediaPlayer mp) {
-                                //animateAssistant();
-                                //task_whenfinished.start();
-                                playAudio = true;
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                smiley_feedback_green.release();
                             }
                         });
 
@@ -78,32 +79,27 @@ public class Activity_bathroom extends AppCompatActivity {
                         break;
                     case "yellow":
                         final MediaPlayer smiley_feedback_yellow = MediaPlayer.create(this, R.raw.smiley_feedback_yellow);
-                        if (playAudio) smiley_feedback_yellow.start();
-                        playAudio = false;
+                        smiley_feedback_yellow.start();
                         smiley_feedback_yellow.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
                             @Override
-                            public void onCompletion(MediaPlayer mp) {
-                                //animateAssistant();
-                                //task_whenfinished.start();
-                                playAudio = true;
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                smiley_feedback_yellow.release();
                             }
                         });
+
                         animateAssistant();
                         break;
                     case "red":
                         final MediaPlayer smiley_feedback_red = MediaPlayer.create(this, R.raw.smiley_feedback_red);
-                        if (playAudio) smiley_feedback_red.start();
-                        playAudio = false;
+                        smiley_feedback_red.start();
                         smiley_feedback_red.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
                             @Override
-                            public void onCompletion(MediaPlayer mp) {
-                                //animateAssistant();
-                                //task_whenfinished.start();
-                                playAudio = true;
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                smiley_feedback_red.release();
                             }
                         });
+
+
                         animateAssistant();
                         break;
                     default:
@@ -130,19 +126,28 @@ public class Activity_bathroom extends AppCompatActivity {
 
         if (playAudio) {
             sm_state_bathroom.start();
+            playAudio = false;
         }
 
-        playAudio = false;
-
         sm_state_bathroom.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
             @Override
             public void onCompletion(MediaPlayer mp) {
                 animateAssistant();
+                sm_state_bathroom.release();
                 sm_task.start();
-                playAudio = true;
+
             }
         });
+
+        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                playAudio = true;
+                sm_task.release();
+            }
+        });
+
+        Log.d("mytag", "playAudio " + playAudio);
         animateAssistant();
     }
 
