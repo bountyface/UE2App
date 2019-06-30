@@ -19,6 +19,10 @@ public class Activity_basement extends AppCompatActivity {
     MediaPlayer sm_state_basement;
     MediaPlayer sm_task;
 
+    MediaPlayer smiley_feedback_green;
+    MediaPlayer smiley_feedback_yellow;
+    MediaPlayer smiley_feedback_red;
+
     boolean playAudio = true;
 
     @Override
@@ -29,15 +33,12 @@ public class Activity_basement extends AppCompatActivity {
 
         sm_state_basement = MediaPlayer.create(this, R.raw.sm_state_basement_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
+        smiley_feedback_green = MediaPlayer.create(this, R.raw.smiley_feedback_green);
+        smiley_feedback_yellow = MediaPlayer.create(this, R.raw.smiley_feedback_yellow);
+        smiley_feedback_red = MediaPlayer.create(this, R.raw.smiley_feedback_red);
 
-
+        sm_task.seekTo(0);
         sm_task.start();
-        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                sm_task.release();
-            }
-        });
 
         animateAssistant();
     }
@@ -71,39 +72,20 @@ public class Activity_basement extends AppCompatActivity {
                 String result = data.getStringExtra("result");
                 switch (result) {
                     case "green":
-                        final MediaPlayer smiley_feedback_green = MediaPlayer.create(this, R.raw.smiley_feedback_green);
+                        smiley_feedback_green.seekTo(0);
                         smiley_feedback_green.start();
-                        smiley_feedback_green.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mediaPlayer) {
-                                smiley_feedback_green.release();
-                            }
-                        });
 
                         animateAssistant();
                         break;
                     case "yellow":
-                        final MediaPlayer smiley_feedback_yellow = MediaPlayer.create(this, R.raw.smiley_feedback_yellow);
+                        smiley_feedback_yellow.seekTo(0);
                         smiley_feedback_yellow.start();
-                        smiley_feedback_yellow.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mediaPlayer) {
-                                smiley_feedback_yellow.release();
-                            }
-                        });
 
                         animateAssistant();
                         break;
                     case "red":
-                        final MediaPlayer smiley_feedback_red = MediaPlayer.create(this, R.raw.smiley_feedback_red);
+                        smiley_feedback_red.seekTo(0);
                         smiley_feedback_red.start();
-                        smiley_feedback_red.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mediaPlayer) {
-                                smiley_feedback_red.release();
-                            }
-                        });
-
 
                         animateAssistant();
                         break;
