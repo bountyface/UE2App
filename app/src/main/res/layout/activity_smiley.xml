@@ -8,6 +8,7 @@
     tools:context=".Activity_smiley">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="190dp"
         android:layout_height="800dp"
         android:layout_marginTop="16dp"
@@ -66,24 +67,25 @@
         android:layout_marginLeft="128dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="onSmileyGreenClick"
         android:src="@drawable/smiley_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="onSmileyGreenClick" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginRight="144dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/smiley_yellow"
         android:onClick="onSmileyYellowClick"
+        android:src="@drawable/smiley_yellow"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView

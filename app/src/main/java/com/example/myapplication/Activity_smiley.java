@@ -39,6 +39,14 @@ public class Activity_smiley extends AppCompatActivity {
         animateAssistant();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("mytag", "smiley destroy");
+        smiley_info.stop();
+        smiley_info.release();
+    }
+
     public void onSmileyGreenClick(View view) {
         Intent intent = new Intent();
         intent.putExtra("result", "green");

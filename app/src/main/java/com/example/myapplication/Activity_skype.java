@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,9 +13,10 @@ public class Activity_skype extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skype);
     }
-    public void onPhoneClick(View view){
+
+    public void onPhoneClick(View view) {
         Intent intent = new Intent();
-        setResult(RESULT_FIRST_USER, intent);
+        setResult(Activity.RESULT_CANCELED, intent);
 
         finish();
     }

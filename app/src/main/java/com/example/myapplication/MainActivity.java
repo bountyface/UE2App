@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Debug;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d("mytag", "pause");
+        /*
         mm_popup_kitchen.stop();
         mm_popup_kitchen.release();
         mm_popup_dining.stop();
@@ -78,8 +80,20 @@ public class MainActivity extends AppCompatActivity {
         mm_popup_living.release();
         mm_popup_basement.stop();
         mm_popup_basement.release();
+        */
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("mytag", "onResume");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("mytag", "onStart");
+    }
 
     public void ShowPopup(View v) {
         ImageView imgCheck;
@@ -348,6 +362,24 @@ public class MainActivity extends AppCompatActivity {
         });
         */
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+
+        Log.d("mytag", "requestCode " + requestCode);
+        Log.d("mytag", "resultCode " + resultCode);
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Log.d("mytag", "RESULT_OK");
+            }
+
+            if (resultCode == RESULT_CANCELED) {
+                Log.d("mytag", "RESULT_CANCELED");
+            }
+        }
+    }
+
 
     private void animateAssistant() {
         assistant = (ImageView) findViewById(R.id.assistant_ImageView);

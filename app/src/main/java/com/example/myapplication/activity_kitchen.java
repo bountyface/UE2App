@@ -32,6 +32,7 @@ public class Activity_kitchen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
+        Log.d("mytag", "kitchen onCreate");
 
         mm_popup_kitchen = MediaPlayer.create(this, R.raw.sm_state_kitchen_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
@@ -46,6 +47,66 @@ public class Activity_kitchen extends AppCompatActivity {
         animateAssistant();
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("mytag", "kitchen start");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("mytag", "kitchen destroy");
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("mytag", "kitchen resume");
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        /*
+        Log.d("mytag", "kitchen pause");
+        mm_popup_kitchen.stop();
+        mm_popup_kitchen.release();
+        sm_task.stop();
+        sm_task.release();
+        smiley_feedback_green.stop();
+        smiley_feedback_green.release();
+        smiley_feedback_yellow.stop();
+        smiley_feedback_yellow.release();
+        smiley_feedback_red.stop();
+        smiley_feedback_red.release();
+        */
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("mytag", "kitchen stop");
+
+/*
+        mm_popup_kitchen.stop();
+        mm_popup_kitchen.release();
+        sm_task.stop();
+        sm_task.release();
+        smiley_feedback_green.stop();
+        smiley_feedback_green.release();
+        smiley_feedback_yellow.stop();
+        smiley_feedback_yellow.release();
+        smiley_feedback_red.stop();
+        smiley_feedback_red.release();
+        */
+
+    }
+
 
     public void onBackButtonClick(View view) {
         Intent testIntent = new Intent(getApplicationContext(), MainActivity.class);
@@ -65,7 +126,7 @@ public class Activity_kitchen extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        Log.d("mytag", "requestCode " + requestCode);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
                 color = data.getIntExtra("color", 0);
@@ -96,8 +157,6 @@ public class Activity_kitchen extends AppCompatActivity {
                     default:
                         break;
                 }
-
-                Log.d("mytag", "RESULT_OK: " + color);
             }
             if (resultCode == RESULT_CANCELED) {
                 Log.d("mytag", "RESULT_CANCELED");
