@@ -23,13 +23,10 @@ public class Activity_sleeping extends AppCompatActivity {
     MediaPlayer smiley_feedback_yellow;
     MediaPlayer smiley_feedback_red;
 
-    boolean playAudio = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleeping);
-        Log.d("mytag", "dining created");
 
         sm_state_sleeping = MediaPlayer.create(this, R.raw.sm_state_sleeping_task);
 
@@ -52,13 +49,10 @@ public class Activity_sleeping extends AppCompatActivity {
     }
 
     public void onSubmenuTileClick(View view) {
-        int x = 21;
-        Log.d("mytag", "onSubmenuTile Clicked!!!!!!");
-
         Intent intent = new Intent(this, Activity_smiley.class);
         intent.putExtra("viewId", view.getId());
         startActivityForResult(intent, 1);
-        //startActivity(testIntent);
+
     }
 
     @Override
@@ -113,29 +107,6 @@ public class Activity_sleeping extends AppCompatActivity {
         animateAssistant();
         sm_state_sleeping.seekTo(0);
         sm_state_sleeping.start();
-
-/*
-        sm_state_sleeping.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                animateAssistant();
-                sm_state_sleeping.release();
-                sm_task.start();
-
-            }
-        });
-
-        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                playAudio = true;
-                sm_task.release();
-            }
-        });
-
-        Log.d("mytag", "playAudio " + playAudio);
-        animateAssistant();
-        */
     }
 
     private void animateAssistant() {

@@ -22,13 +22,10 @@ public class Activity_dining extends AppCompatActivity {
     MediaPlayer smiley_feedback_yellow;
     MediaPlayer smiley_feedback_red;
 
-    boolean playAudio = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining);
-        Log.d("mytag", "dining created");
 
         mm_popup_dining = MediaPlayer.create(this, R.raw.sm_state_dining_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
@@ -40,7 +37,6 @@ public class Activity_dining extends AppCompatActivity {
         sm_task.start();
 
         animateAssistant();
-
     }
 
     public void onBackButtonClick(View view) {
@@ -49,13 +45,9 @@ public class Activity_dining extends AppCompatActivity {
     }
 
     public void onSubmenuTileClick(View view) {
-        int x = 21;
-        Log.d("mytag", "onSubmenuTile Clicked!!!!!!");
-
         Intent intent = new Intent(this, Activity_smiley.class);
         intent.putExtra("viewId", view.getId());
         startActivityForResult(intent, 1);
-        //startActivity(testIntent);
     }
 
     @Override
@@ -113,35 +105,9 @@ public class Activity_dining extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-
         animateAssistant();
-
         mm_popup_dining.seekTo(0);
         mm_popup_dining.start();
-
-        /*
-
-        mm_popup_dining.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                animateAssistant();
-                mm_popup_dining.release();
-                sm_task.start();
-
-            }
-        });
-
-        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                playAudio = true;
-                sm_task.release();
-            }
-        });
-
-        Log.d("mytag", "playAudio " + playAudio);
-        */
-
     }
 
 }

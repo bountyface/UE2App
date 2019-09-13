@@ -15,7 +15,6 @@ import android.widget.ImageView;
 public class Activity_smiley extends AppCompatActivity {
 
     ImageView assistant;
-    boolean playAudio = true;
 
     MediaPlayer smiley_info;
 
@@ -26,10 +25,8 @@ public class Activity_smiley extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smiley);
 
-        //Intent intent = getIntent();
         receivedIntent = getIntent();
         int id = receivedIntent.getIntExtra("viewId", 0);
-        //int number1 = intent.getIntExtra("number1", 0);
 
         smiley_info = MediaPlayer.create(this, R.raw.smiley_info);
 
@@ -42,7 +39,6 @@ public class Activity_smiley extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("mytag", "smiley destroy");
         smiley_info.stop();
         smiley_info.release();
     }
@@ -55,7 +51,6 @@ public class Activity_smiley extends AppCompatActivity {
         setResult(RESULT_OK, intent);
 
         finish();
-
     }
 
     public void onSmileyYellowClick(View view) {
@@ -66,7 +61,6 @@ public class Activity_smiley extends AppCompatActivity {
         setResult(RESULT_OK, intent);
 
         finish();
-
     }
 
     public void onSmileyRedClick(View view) {
@@ -87,19 +81,8 @@ public class Activity_smiley extends AppCompatActivity {
     public void onAssistantClick(View view) {
         animateAssistant();
 
-
         smiley_info.seekTo(0);
         smiley_info.start();
-/*
-        playAudio = false;
-        smiley_info.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                //animateAssistant();
-                playAudio = true;
-            }
-        });*/
     }
 
     private void animateAssistant() {

@@ -6,11 +6,8 @@ import android.util.Log;
 
 public class Startup extends Application {
     @Override
-    public void onCreate(){
+    public void onCreate() {
         super.onCreate();
-        Log.d("mytag", "only onStartup");
-
-
     }
 
 

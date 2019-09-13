@@ -22,7 +22,6 @@ public class Activity_bathroom extends AppCompatActivity {
     MediaPlayer smiley_feedback_yellow;
     MediaPlayer smiley_feedback_red;
 
-    boolean playAudio = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,6 @@ public class Activity_bathroom extends AppCompatActivity {
         sm_task.start();
 
         animateAssistant();
-
     }
 
     public void onBackButtonClick(View view) {
@@ -50,13 +48,10 @@ public class Activity_bathroom extends AppCompatActivity {
     }
 
     public void onSubmenuTileClick(View view) {
-        int x = 21;
-        Log.d("mytag", "onSubmenuTile Clicked!!!!!!");
-
         Intent intent = new Intent(this, Activity_smiley.class);
         intent.putExtra("viewId", view.getId());
         startActivityForResult(intent, 1);
-        //startActivity(testIntent);
+
     }
 
     @Override
@@ -109,33 +104,9 @@ public class Activity_bathroom extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-
         animateAssistant();
         sm_state_bathroom.seekTo(0);
         sm_state_bathroom.start();
-
-        /*
-
-        sm_state_bathroom.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                animateAssistant();
-                sm_state_bathroom.release();
-                sm_task.start();
-
-            }
-        });
-
-        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                playAudio = true;
-                sm_task.release();
-            }
-        });
-
-        Log.d("mytag", "playAudio " + playAudio);
-        */
     }
 
     private void animateAssistant() {
@@ -143,5 +114,4 @@ public class Activity_bathroom extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
         assistant.startAnimation(animation);
     }
-
 }

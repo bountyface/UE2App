@@ -25,13 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     MediaPlayer introduction;
 
-
     Dialog myDialog;
     ImageView assistant;
     ImageView popupAssistant;
-
-    boolean firstTime = true;
-    boolean playAudio = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,38 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
         introduction = MediaPlayer.create(this, R.raw.mm_intro);
 
-        // for testing purpose
-        /*
-        ImageView kitchenImageView = (ImageView) findViewById(R.id.MM_Kitchen_ImageView);
-        kitchenImageView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                displayToast("Kitchen");
-                Intent testIntent = new Intent(getApplicationContext(), test.class);
-                startActivity(testIntent);
-            }
-        });
-        */
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Log.d("mytag", "pause");
-        /*
-        mm_popup_kitchen.stop();
-        mm_popup_kitchen.release();
-        mm_popup_dining.stop();
-        mm_popup_dining.release();
-        mm_popup_sleeping.stop();
-        mm_popup_sleeping.release();
-        mm_popup_bathroom.stop();
-        mm_popup_bathroom.release();
-        mm_popup_living.stop();
-        mm_popup_living.release();
-        mm_popup_basement.stop();
-        mm_popup_basement.release();
-        */
     }
 
     @Override
@@ -338,37 +308,10 @@ public class MainActivity extends AppCompatActivity {
         introduction.seekTo(0);
         introduction.start();
 
-
-/*
-        introduction.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                animateAssistant();
-                introduction.release();
-                if (!playAudio) {
-                    mm_status.seekTo(0);
-                    mm_status.start();
-                }
-            }
-        });
-
-        mm_status.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                mm_status.release();
-                playAudio = true;
-            }
-        });
-        */
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //super.onActivityResult(requestCode, resultCode, data);
-
-        Log.d("mytag", "requestCode " + requestCode);
-        Log.d("mytag", "resultCode " + resultCode);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
                 Log.d("mytag", "RESULT_OK");
@@ -380,11 +323,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     private void animateAssistant() {
         assistant = (ImageView) findViewById(R.id.assistant_ImageView);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake1);
         assistant.startAnimation(animation);
     }
-
 }

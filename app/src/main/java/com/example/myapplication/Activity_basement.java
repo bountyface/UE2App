@@ -23,13 +23,11 @@ public class Activity_basement extends AppCompatActivity {
     MediaPlayer smiley_feedback_yellow;
     MediaPlayer smiley_feedback_red;
 
-    boolean playAudio = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basement);
-        Log.d("mytag", "dining created");
 
         sm_state_basement = MediaPlayer.create(this, R.raw.sm_state_basement_task);
         sm_task = MediaPlayer.create(this, R.raw.sm_task);
@@ -49,13 +47,9 @@ public class Activity_basement extends AppCompatActivity {
     }
 
     public void onSubmenuTileClick(View view) {
-        int x = 21;
-        Log.d("mytag", "onSubmenuTile Clicked!!!!!!");
-
         Intent intent = new Intent(this, Activity_smiley.class);
         intent.putExtra("viewId", view.getId());
         startActivityForResult(intent, 1);
-        //startActivity(testIntent);
     }
 
     @Override
@@ -107,32 +101,10 @@ public class Activity_basement extends AppCompatActivity {
     }
 
     public void onAssistantClick(View view) {
-
         animateAssistant();
         sm_state_basement.seekTo(0);
         sm_state_basement.start();
 
-/*
-        sm_state_basement.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                animateAssistant();
-                sm_state_basement.release();
-                sm_task.start();
-
-            }
-        });
-
-        sm_task.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
-                playAudio = true;
-                sm_task.release();
-            }
-        });
-
-        Log.d("mytag", "playAudio " + playAudio);
-        */
     }
 
     private void animateAssistant() {
